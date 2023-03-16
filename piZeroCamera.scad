@@ -26,10 +26,19 @@ module thermal_cam()
 }
 
 difference() {
-    myBox(-45,-15,0,90,30,20);
-    translate([0, 0, -5])
-        linear_extrude(5) 
-            noir_cam();
+    color([1,0.5,0.5]) 
+        myBox(-45,-15,0,90,30,45);
+    
+    rotate([-90,0,0])
+    union() {
+        translate([0,-12, -20])        
+            linear_extrude(10) 
+                noir_cam();
+    
+        translate([0, -35, -20])
+            linear_extrude(10)
+                thermal_cam();
+    }
 }
 
 
