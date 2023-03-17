@@ -4,7 +4,7 @@ use <generic.scad>;
 use <pico.scad>;
 
 difference() {
-    myBox(0,0,0,35,80,15);
+    myBox(35,80,15);
     translate([17.5, 0, 15])
         cube([8,6,24], center=true);
     translate([17.5, 5, 9])    
