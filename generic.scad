@@ -13,7 +13,9 @@ module stud(radius, h)
     union() {
         cylinder(h, radius + 0.7, radius+0.7);
         translate([0,0, h])
-        cylinder(3, radius, radius);        
+        cylinder(3, radius, radius);
+        translate ([-4, -0.5, 0]) cube([8, 1, h - 8]);
+        translate ([-0.5, -4, 0]) cube([1, 8, h - 8]);
     }
 }
 

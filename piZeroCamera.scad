@@ -1,4 +1,4 @@
-$fn=32;
+$fn=16;
 
 use <generic.scad>;
 use <pico.scad>;
@@ -31,11 +31,10 @@ difference() {
         union() {
             translate([-45,-20,0]) myBox(90,35,25);
             translate([-46,16,25]) rotate([90,0,0]) linear_extrude(1) polygon([[0,0], [41,20], [51,20], [92,0]]);
-            translate([-20, -71, 0]) myBox(40,50,25);
-
+            translate([-20, -81, 0]) myBox(40,60,25);
         }
     
-    translate([-20, -45, 0]) cube([40,50,27]);
+    translate([-45, -45, 0]) cube([90,50,27]);
     rotate([-90,0,0])
         linear_extrude(20) 
             union() {
@@ -48,9 +47,14 @@ difference() {
     
 }
 
-translate([15, -70,0]) rotate([0,0,90]) piZeroStuds(20);
+translate([15, -80,0]) rotate([0,0,90]) piZeroStuds(20);
 
+difference() {
+    translate([0,0,-1]) linear_extrude(26) polygon([[-21,-21],[-20,-46],[-46,-21]]);
+    translate([0.6,0.6,0]) linear_extrude(26) polygon([[-21,-21],[-20,-46],[-46,-21]]);
+}
 
-
-
-    
+difference() {
+    translate([0,0,-1]) linear_extrude(26) polygon([[21,-20],[20,-46],[46,-21]]);
+    translate([-0.6,0.6,0]) linear_extrude(26) polygon([[21,-20],[20,-46],[46,-21]]);
+}
