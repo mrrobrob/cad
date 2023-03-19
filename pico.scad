@@ -13,10 +13,10 @@ module picoStuds()
 module picoStudHoles(h)
 {    
     union() {
-        translate([4.8, 2, 0]) studHole(1, h);
-        translate([16.2, 2, 0])studHole(1, h);
-        translate([4.8, 49, 0]) studHole(1, h);
-        translate([16.2, 49, 0]) studHole(1, h);
+        translate([4.8, 2, 0]) studHole(1.2, h);
+        translate([16.2, 2, 0])studHole(1.2, h);
+        translate([4.8, 49, 0]) studHole(1.2, h);
+        translate([16.2, 49, 0]) studHole(1.2, h);
     }
 }
 

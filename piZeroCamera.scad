@@ -30,7 +30,7 @@ difference() {
     color([1,0.5,0.5]) 
         union() {
             translate([-45,-20,0]) myBox(90,35,25);
-            translate([-46,16,25]) rotate([90,0,0]) linear_extrude(1) polygon([[0,0], [41,20], [51,20], [92,0]]);
+            translate([-46,16,25]) rotate([90,0,0]) linear_extrude(1) polygon([[0,0], [31,20], [61,20], [92,0]]);
             translate([-20, -81, 0]) myBox(40,60,25);
         }
     
