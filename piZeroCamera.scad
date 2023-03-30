@@ -26,37 +26,11 @@ module thermal_cam()
     circle(r=5);
 }
 
-difference() {
-    color([1,0.5,0.5]) 
-        union() {
-            translate([-45,-20,0]) myBox(90,35,25);
-            translate([-46,16,25]) rotate([90,0,0]) linear_extrude(1) polygon([[0,0], [31,20], [61,20], [92,0]]);
-            translate([-20, -91, 0]) myBox(40,70,45);
-            
-        }
-    
-    translate([10, -76, 15]) cube([20,20,15]);
-    translate([-45, -45, 0]) cube([90,50,57]);
-    rotate([270,0,0])
-        linear_extrude(20) 
-            union() {
-                translate([0,-12, -20])        
-                    noir_cam();    
-                translate([0, -35])            
-                    thermal_cam();
-        };
-    
-    
-}
-
-translate([15, -80,0]) rotate([0,0,90]) piZeroStuds(20);
 
 difference() {
-    translate([0,0,-1]) linear_extrude(26) polygon([[-21,-21],[-20,-46],[-46,-21]]);
-    translate([0.6,0.6,0]) linear_extrude(26) polygon([[-21,-21],[-20,-46],[-46,-21]]);
+    rotate([90,0,0]) myBox(90, 90, 20);
+    translate([45,5,30]) rotate([90,0,0]) linear_extrude(10) noir_cam();
+    translate([45,5,70]) rotate([90,0,0]) linear_extrude(10) thermal_cam();
 }
 
-difference() {
-    translate([0,0,-1]) linear_extrude(26) polygon([[21,-20],[20,-46],[46,-21]]);
-    translate([-0.6,0.6,0]) linear_extrude(26) polygon([[21,-20],[20,-46],[46,-21]]);
-}
+
