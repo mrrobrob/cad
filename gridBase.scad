@@ -5,6 +5,7 @@ midGap = 1.80;
 bottomGap = 0.80;
 width = 35.6 + bottomGap * 2 + topGap * 2;
 
+rotate([180,0,0])
 difference() {
     union(){
         hull() {
