@@ -26,11 +26,17 @@ module thermal_cam()
     circle(r=5);
 }
 
+module motion_sensor()
+{
+    circle(d=23);
+}
+
 
 difference() {
     rotate([90,0,0]) myBox(90, 90, 20);
     translate([45,5,30]) rotate([90,0,0]) linear_extrude(10) noir_cam();
-    translate([45,5,70]) rotate([90,0,0]) linear_extrude(10) thermal_cam();
+    translate([65,5,70]) rotate([90,0,0]) linear_extrude(10) thermal_cam();
+    translate([20,5,70]) rotate([90,0,0]) linear_extrude(10) motion_sensor();
 }
 
 
