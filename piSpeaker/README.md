@@ -50,6 +50,11 @@ select option 1
 
 Logout and in again.
 
+### Install go and spotcontrol
+
+- `sudo apt install golang`
+- `go get github.com/badfortrains/spotcontrol`
+
 ### Install and configure librespot
 
 Dependencies:
@@ -60,10 +65,10 @@ Main Product:
 
 `cargo install librespot`
 
-copy spotify.py to /etc/librespot/spotify.py and make executable
-
 Autostart:
 
+- copy spotify.py to /etc/librespot/spotify.py and make executable
+- copy spotify.service and speakerControls.service to /etc/systemd/system
 - `sudo service spotify start`
 - `sudo systemctl enable spotify.service`
 - `sudo service speakerControls start`
