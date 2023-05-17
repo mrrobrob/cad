@@ -1,17 +1,10 @@
-$fn = 16;
+module private_hinge(radius, teeth, gearH, supportH) {
+    for(dr=[0:teeth-1]) {
 
-gearH = 2;
-supportH = 4;
-radius = 10;
-teeth = $fn;
+        angleFactor = 360 / teeth;
 
-angleFactor = 360 / teeth;
-
-module hinge() {
-    for(r=[0:teeth-1]) {
-
-        angle1 = angleFactor * r;
-        angle2 = angleFactor * (r + 1);
+        angle1 = angleFactor * dr;
+        angle2 = angleFactor * (dr + 1);
 
         x1 = radius * sin(angle1);
         y1 = radius * cos(angle1);
@@ -32,17 +25,23 @@ module hinge() {
     }
 }
 
-difference() {
-    hinge();
-    translate ([0,0,-100]) cylinder(r=2.1, h=1000, center=true);
+module hingeTop(radius, teeth, gearH, supportH) {
+    translate([0,0,supportH])
+    difference() {
+        private_hinge(radius, teeth, gearH, supportH);
+        translate ([0,0,-100]) cylinder(r=2.1, h=1000, center=true);
+    }
 }
 
-translate ([25,0,-supportH/2]) 
+module hingeBottom(radius, teeth, gearH, supportH)
+    translate([0,0,supportH/2])
     difference() {
         translate([0,0,gearH/2]) cylinder(r=radius, h=supportH+gearH, center=true);
-        translate([0,0,supportH]) rotate([180, 0, 0]) hinge();
+        translate([0,0,supportH]) rotate([180, 0, 0]) private_hinge(radius, teeth, gearH, supportH);
         translate ([0,0,-100]) cylinder(r=2.1, h=1000, center=true);
     
     }
-    
-
+   
+// Example Usage
+// hingeTop(30, 16, 4, 8);
+// translate ([80,0,0]) hingeBottom(30,16,4,8);
