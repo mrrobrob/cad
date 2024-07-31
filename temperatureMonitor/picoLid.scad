@@ -1,7 +1,7 @@
 $fn=32;
 
-use <generic.scad>;
-use <pico.scad>;
+use <..\generic.scad>;
+use <..\pico.scad>;
 
 difference() {    
     translate([-1.1,-1.1,0]) myBox(37.2,83.2, 10);

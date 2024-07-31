@@ -19,8 +19,5 @@ difference() {
             translate([0,-20,15]) rotate([0,90,0]) cylinder(r=3.1, h=1000, center=true);
             translate([0,20,15]) rotate([0,90,0]) cylinder(r=3.1, h=1000, center=true);
         }
-    }
-    
-    
-    
+    }    
 }

@@ -3,10 +3,10 @@ use <generic.scad>;
 module picoStuds()
 {
     union() {
-        translate([4.8, 2, 0]) stud(1, 5);
-        translate([16.2, 2, 0]) stud(1, 5);
-        translate([4.8, 49, 0]) stud(1, 5);
-        translate([16.2, 49, 0]) stud(1, 5);
+        translate([4.8, 2, 0]) stud(0.85, 5);
+        translate([16.2, 2, 0]) stud(0.85, 5);
+        translate([4.8, 49, 0]) stud(0.85, 5);
+        translate([16.2, 49, 0]) stud(0.85, 5);
     }
 }
 
